@@ -5,7 +5,7 @@ javascript工具库
 ## 安装
 
 ```bash
-pnpm add @etils/core
+pnpm add @etils/tool
 ```
 
 ## 使用
