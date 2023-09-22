@@ -15,6 +15,7 @@ export default defineConfig({
     alias: {
       '@etilsjs/shared': resolve(__dirname, 'packages/shared/index.ts'),
       '@etilsjs/core': resolve(__dirname, 'packages/core/index.ts'),
+      '@etilsjs/tool': resolve(__dirname, 'packages/tool/index.ts'),
     },
   },
 });
