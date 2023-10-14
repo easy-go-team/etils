@@ -68,5 +68,5 @@ export const isArray = (val: any) => Array.isArray(val);
  * @description: 判断是否是为IE
  */
 export const isIE = () => {
-    return !!((window as any).ActiveXObject || 'ActiveXObject' in window);
+  return !!((window as any).ActiveXObject || 'ActiveXObject' in window);
 };

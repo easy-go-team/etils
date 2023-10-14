@@ -3,3 +3,4 @@ dist/*
 **/*.md
 .changeset/*
 .husky/*
+packages/.vitepress/*
