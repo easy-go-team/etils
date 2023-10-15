@@ -1,5 +1,11 @@
 import { defaultEquals, LinkedList, Node } from '../linked-list/index';
-
+/**
+ * 双端列表
+ * @export
+ * @class DoublyLinkedList
+ * @extends {LinkedList<T>}
+ * @template T
+ */
 export class DoublyLinkedList<T> extends LinkedList<T> {
   public tail: DoublyNode<T> | undefined;
   constructor(equalFn = defaultEquals) {
@@ -12,7 +18,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
       return false;
     }
     const node = new DoublyNode(element);
-    let current = this.head as DoublyNode<T>;
+    let current = this.head as DoublyNode<T> || {};
     if (index === 0) {
       if (this.head == null) {
         this.head = node;
@@ -23,7 +29,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
         this.head = current;
       }
     } else if (index === this.count) {
-      current = this.tail as DoublyNode<T>;
+      current = this.tail as DoublyNode<T> || {};
       current.next = node;
       node.prev = current;
       this.tail = node;
@@ -72,6 +78,13 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
   }
 }
 
+/**
+ * 列表元素
+ * @export
+ * @class DoublyNode
+ * @extends {Node<T>}
+ * @template T
+ */
 export class DoublyNode<T> extends Node<T> {
   public prev: DoublyNode<T> | undefined = undefined;
   constructor(element: T, next = undefined, prev = undefined) {

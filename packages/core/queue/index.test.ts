@@ -66,7 +66,7 @@ describe('双端队列单元测试', () => {
     deque.addFront('a');
     deque.addFront('b');
     deque.addFront('c');
-    expect(deque.toString()).toBe('a,b,c');
+    expect(deque.toString()).toBe('c,b,a');
   });
   it('测试双端队列的addBack方法', () => {
     const deque = new Deque();

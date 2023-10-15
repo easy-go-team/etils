@@ -6,7 +6,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     browser: {
-      enabled: true,
+      enabled: false,
       name: 'chrome', // browser name is required
       headless: true,
     },

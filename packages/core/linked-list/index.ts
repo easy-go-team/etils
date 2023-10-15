@@ -1,3 +1,6 @@
+/**
+ * 链表
+ */
 export class LinkedList<T> {
   public count: number;
   public head: Node<T> | undefined;
@@ -9,6 +12,10 @@ export class LinkedList<T> {
     this.equalsFn = equalsFn;
   }
 
+  /**
+   * 向链表尾部添加元素
+   * @param element
+   */
   push(element: T) {
     const node = new Node(element);
     let current: Node<T>;
@@ -24,6 +31,10 @@ export class LinkedList<T> {
     this.count++;
   }
 
+  /**
+   * 移除指定位置的元素
+   * @param index
+   */
   removeAt(index: number) {
     if (index < 0 || index >= this.count) {
       return undefined;
@@ -42,6 +53,10 @@ export class LinkedList<T> {
     return current?.element;
   }
 
+  /**
+   * 获取指定位置的元素
+   * @param index
+   */
   getElementAt(index: number) {
     if (index < 0 || index > this.count) {
       return undefined;
@@ -53,6 +68,11 @@ export class LinkedList<T> {
     return node;
   }
 
+  /**
+   * 在指定位置插入元素
+   * @param element
+   * @param index
+   */
   insert(element: T, index: number) {
     if (index < 0 || index > this.count) {
       return false;
@@ -75,6 +95,10 @@ export class LinkedList<T> {
     return true;
   }
 
+  /**
+   * 获取指定元素的位置
+   * @param element
+   */
   indexOf(element: T) {
     let current = this.head;
     for (let i = 0; i < this.count && current != null; i++) {
@@ -86,23 +110,39 @@ export class LinkedList<T> {
     return -1;
   }
 
+  /**
+   * 移除指定元素
+   * @param element
+   */
   remove(element: T) {
     const index = this.indexOf(element);
     return this.removeAt(index);
   }
 
+  /**
+   * 获取链表的长度
+   */
   size() {
     return this.count;
   }
 
+  /**
+   * 判断链表是否为空
+   */
   isEmpty() {
     return this.size() === 0;
   }
 
+  /**
+   * 获取链表的头部
+   */
   getHead() {
     return this.head;
   }
 
+  /**
+   * 清空链表
+   */
   toString() {
     if (this.head == null) {
       return '';
@@ -131,8 +171,8 @@ export function defaultEquals<T>(a: T, b: T) {
  * 链表中中的元素
  */
 export class Node<T> {
-  element: T;
-  next: any;
+  public element: T;
+  public next: any;
   constructor(element: T, next = undefined) {
     this.element = element;
     this.next = next;
